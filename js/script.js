@@ -23,21 +23,23 @@ var formObject = {
             p1.innerHTML = this.questions[i];
             form.appendChild(p1);
 
+
             for (var k = 0; k < this.answers.length; k++) {
                 var inputCheck,
                     spanAfterInput,
-                    brAfterInput;
+                    label1;
+
+                label1 = document.createElement('label');
+                form.appendChild(label1);
 
                 inputCheck = document.createElement('input');
                 inputCheck.type = 'checkbox';
-                form.appendChild(inputCheck);
+                label1.appendChild(inputCheck);
 
                 spanAfterInput = document.createElement('span');
                 spanAfterInput.innerHTML = this.answers[k];
-                form.appendChild(spanAfterInput);
+                label1.appendChild(spanAfterInput);
 
-                brAfterInput = document.createElement('br');
-                form.appendChild(brAfterInput);
             }
 
         }
