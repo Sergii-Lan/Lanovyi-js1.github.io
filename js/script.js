@@ -18,21 +18,24 @@ var formObject = {
 
     block: function () {
 
-        for (i = 0; i < this.questions.length; i++) {
+        for (var i = 0; i < this.questions.length; i++) {
             var p1 = document.createElement('p');
             p1.innerHTML = this.questions[i];
             form.appendChild(p1);
 
-            for (k = 0; k < this.answers.length; k++) {
+            for (var k = 0; k < this.answers.length; k++) {
                 var inputCheck,
                     spanAfterInput,
                     brAfterInput;
+
                 inputCheck = document.createElement('input');
                 inputCheck.type = 'checkbox';
                 form.appendChild(inputCheck);
+
                 spanAfterInput = document.createElement('span');
                 spanAfterInput.innerHTML = this.answers[k];
                 form.appendChild(spanAfterInput);
+
                 brAfterInput = document.createElement('br');
                 form.appendChild(brAfterInput);
             }
