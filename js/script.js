@@ -1,4 +1,3 @@
-console.log(document);
 
 var divWrapper = document.createElement('div');
 divWrapper.classList.add('wrapper');
@@ -19,19 +18,22 @@ var formObject = {
 
     block: function () {
 
-        for (i = 0; i < 3; i++) {
+        for (i = 0; i < this.questions.length; i++) {
             var p1 = document.createElement('p');
             p1.innerHTML = this.questions[i];
             form.appendChild(p1);
 
-            for (k = 0; k < 3; k++) {
-                var inputCheck = document.createElement('input');
+            for (k = 0; k < this.answers.length; k++) {
+                var inputCheck,
+                    spanAfterInput,
+                    brAfterInput;
+                inputCheck = document.createElement('input');
                 inputCheck.type = 'checkbox';
                 form.appendChild(inputCheck);
-                var spanAfterInput = document.createElement('span');
+                spanAfterInput = document.createElement('span');
                 spanAfterInput.innerHTML = this.answers[k];
                 form.appendChild(spanAfterInput);
-                var brAfterInput = document.createElement('br');
+                brAfterInput = document.createElement('br');
                 form.appendChild(brAfterInput);
             }
 
@@ -51,8 +53,6 @@ var formObject = {
 formObject.block();
 formObject.button();
 
-
-console.log(divWrapper);
 
 
 
